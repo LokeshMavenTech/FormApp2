@@ -14,48 +14,76 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText editTextText4, editTextText5, editTextDate, editTextTextEmailAddress, editTextText9, editTextText10, editTextText11, editTextText12, editTextTextPostalAddress, editTextPhone, editTextText14, editTextDate2, editTextNumberDecimal, editTextText15, editTextNumberDecimal3, editTextDate3, editTextText17, editTextNumberDecimal2, editTextText16;
-    EditText editTextText20, editTextText21, editTextText22;
-    Button button2;
-    CheckBox checkBox, checkBox2;
+    private EditText editTextText4;
+    private EditText editTextText5;
+    private EditText editTextDate;
+    private EditText editTextTextEmailAddress;
+    private EditText editTextText9;
+    private EditText editTextText10;
+    private EditText editTextText11;
+    private EditText editTextText12;
+    private EditText editTextTextPostalAddress;
+    private EditText editTextPhone;
+    private EditText editTextText14;
+    private EditText editTextDate2;
+    private EditText editTextNumberDecimal;
+    private EditText editTextText15;
+    private EditText editTextNumberDecimal3;
+    private EditText editTextDate3;
+    private EditText editTextText17;
+    private EditText editTextNumberDecimal2;
+    private EditText editTextText16;
+    private EditText editTextText20;
+    private EditText editTextText21;
+    private EditText editTextText22;
+    private Button button2;
+    private CheckBox checkBox;
+    private CheckBox checkBox2;
     private String firstName;
+
+    private String lastName;
+    private String dob;
+    private String email;
+    private String male;
+    private String female;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editTextText4 =findViewById(R.id.editTextText4);// First Name
+        editTextText4 = findViewById(R.id.editTextText4);// First Name
         editTextText5 = findViewById(R.id.editTextText5);//Last Name
         editTextDate = findViewById(R.id.editTextDate);//DOB
         editTextTextEmailAddress = findViewById(R.id.editTextTextEmailAddress);// Email Addess
-        editTextText9 =findViewById(R.id.editTextText9);//Bulding No
-        editTextText10 =findViewById(R.id.editTextText10);//Strit Name
+        editTextText9 = findViewById(R.id.editTextText9);//Bulding No
+        editTextText10 = findViewById(R.id.editTextText10);//Strit Name
         editTextText11 = findViewById(R.id.editTextText11);//City
-        editTextText12 =findViewById(R.id.editTextText12);//State
+        editTextText12 = findViewById(R.id.editTextText12);//State
         editTextTextPostalAddress = findViewById(R.id.editTextTextPostalAddress);//pin
-        editTextPhone =  findViewById(R.id.editTextPhone);// contact Number
+        editTextPhone = findViewById(R.id.editTextPhone);// contact Number
 
         // for university 1
-        editTextText14 =  findViewById(R.id.editTextText14);
+        editTextText14 = findViewById(R.id.editTextText14);
         editTextDate2 = findViewById(R.id.editTextDate2);
-        editTextNumberDecimal =findViewById(R.id.editTextNumberDecimal);
+        editTextNumberDecimal = findViewById(R.id.editTextNumberDecimal);
         // for university 2
-        editTextText15 =  findViewById(R.id.editTextText15);
-        editTextText16 =findViewById(R.id.editTextText16);
-        editTextNumberDecimal2 =findViewById(R.id.editTextNumberDecimal2);
+        editTextText15 = findViewById(R.id.editTextText15);
+        editTextText16 = findViewById(R.id.editTextText16);
+        editTextNumberDecimal2 = findViewById(R.id.editTextNumberDecimal2);
         // for university 3
-        editTextText17 =findViewById(R.id.editTextText17);
-        editTextDate3 =findViewById(R.id.editTextDate2);
-        editTextNumberDecimal3 =findViewById(R.id.editTextNumberDecimal3);
+        editTextText17 = findViewById(R.id.editTextText17);
+        editTextDate3 = findViewById(R.id.editTextDate2);
+        editTextNumberDecimal3 = findViewById(R.id.editTextNumberDecimal3);
         button2 = findViewById(R.id.button2);
-        checkBox =findViewById(R.id.checkBox);
-        checkBox2 =findViewById(R.id.checkBox2);
+        checkBox = findViewById(R.id.checkBox);
+        checkBox2 = findViewById(R.id.checkBox2);
 
         // programing Language
-        editTextText20 =findViewById(R.id.editTextText20);
-        editTextText21 =findViewById(R.id.editTextText21);
-        editTextText22 =findViewById(R.id.editTextText22);
+        editTextText20 = findViewById(R.id.editTextText20);
+        editTextText21 = findViewById(R.id.editTextText21);
+        editTextText22 = findViewById(R.id.editTextText22);
+
 
         boolean isChecked = checkBox.isChecked();
         boolean isChecked2 = checkBox2.isChecked();
@@ -87,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 String prog1 = editTextText21.getText().toString();
                 String prog3 = editTextText22.getText().toString();
 
-                validateinfo(fname, lname, dob, buldingNo, strit,city,state, pin, contactno, u1, passd1, achive1, u2, passd2, achive2, u3, passd3, achive3, prog, prog1, prog3);
+                validateinfo(fname, lname, dob, buldingNo, strit, city, state, pin, contactno, u1, passd1, achive1, u2, passd2, achive2, u3, passd3, achive3, prog, prog1, prog3);
                 validateinfo1(email);
                 sendData();
 
@@ -95,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private Boolean validateinfo(String fname, String lname, String dob, String buldingNo, String strit,String city, String state,String pin,String contactno, String u1, String passd1, String achive1, String u2, String passd2, String achive2, String u3, String passd3, String achive3, String prog, String prog1, String prog3) {
+    private Boolean validateinfo(String fname, String lname, String dob, String buldingNo, String strit, String city, String state, String pin, String contactno, String u1, String passd1, String achive1, String u2, String passd2, String achive2, String u3, String passd3, String achive3, String prog, String prog1, String prog3) {
         // First Name
         if (fname.length() == 0) {
             editTextText4.requestFocus();
@@ -132,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //Street
-        else if (strit.length() == 0 ) {
+        else if (strit.length() == 0) {
             editTextText10.requestFocus();
             editTextText10.setError("Please Enter Steeet");
             return false;
@@ -233,6 +261,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return true;
+
     }
 
     private Boolean validateinfo1(String email) {
@@ -245,10 +274,21 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+
     public void sendData() {
-        firstName= editTextText4.getText().toString().trim();
+        firstName = editTextText4.getText().toString().trim();
+        lastName = editTextText5.getText().toString().trim();
+        dob = editTextDate.getText().toString().trim();
+        email = editTextTextEmailAddress.getText().toString().trim();
+        male = checkBox.getText().toString().trim();
+        female = checkBox2.getText().toString().trim();
         Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-        intent.putExtra(MainActivity2.FNAME,firstName);
+        intent.putExtra(MainActivity2.FNAME, firstName);
+        intent.putExtra(MainActivity2.LNAME, lastName);
+        intent.putExtra(MainActivity2.DOB,dob);
+        intent.putExtra(MainActivity2.EMAIL,email);
+        intent.putExtra(MainActivity2.MALE, male);
+        intent.putExtra(MainActivity2.FEMALE,female);
         startActivity(intent);
     }
 
