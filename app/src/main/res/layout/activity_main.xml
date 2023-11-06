@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/image1">
+        android:background="@drawable/image4">
 
 
         <TextView
@@ -63,14 +63,14 @@
             android:id="@+id/editTextText4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
             android:layout_marginTop="35dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="text"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.15"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/EnterResumeDetails" />
 
         <TextView
@@ -91,15 +91,15 @@
             android:id="@+id/editTextText5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="text"
-            android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
 
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.15"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
 
         <TextView
@@ -120,6 +120,7 @@
             android:id="@+id/editText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
             android:layout_marginTop="20dp"
             android:background="@color/cardview_light_background"
             android:ems="10"
@@ -127,8 +128,7 @@
             android:inputType="date"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.038"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
 
         <TextView
@@ -164,14 +164,14 @@
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
             android:layout_marginTop="20dp"
             android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="textEmailAddress"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.24"
-            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editText" />
 
 
@@ -179,11 +179,10 @@
             android:id="@+id/radioGroup"
             android:layout_width="93dp"
             android:layout_height="67dp"
-            android:layout_marginStart="28dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="40dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textView9"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress">
 
             <RadioButton
@@ -191,14 +190,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="31dp"
                 android:background="@color/white"
-                android:text="male"></RadioButton>
+                android:text="Male"></RadioButton>
 
             <RadioButton
                 android:id="@+id/female"
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
                 android:background="@color/white"
-                android:text="female"></RadioButton>
+                android:text="Female"></RadioButton>
         </RadioGroup>
 
         <TextView
@@ -235,14 +234,14 @@
             android:id="@+id/editTextText9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/cardview_light_background"
+            android:layout_marginStart="64dp"
             android:layout_marginTop="106dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="text"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.132"
-            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
         <TextView
@@ -263,14 +262,14 @@
             android:id="@+id/editTextText10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="text"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.06"
-            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText9" />
 
         <TextView
@@ -291,14 +290,14 @@
             android:id="@+id/editTextText11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="text"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.351"
-            app:layout_constraintStart_toEndOf="@+id/textView14"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText10" />
 
         <TextView
@@ -318,14 +317,14 @@
             android:id="@+id/editTextText12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="text"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.308"
-            app:layout_constraintStart_toEndOf="@+id/textView15"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText11" />
 
         <TextView
@@ -346,14 +345,14 @@
             android:id="@+id/editTextTextPostalAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="number"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.339"
-            app:layout_constraintStart_toEndOf="@+id/textView16"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText12" />
 
         <TextView
@@ -374,14 +373,14 @@
             android:id="@+id/editTextPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="phone"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.059"
-            app:layout_constraintStart_toEndOf="@+id/textView17"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
 
         <TextView
@@ -417,14 +416,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="64dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="text"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="64dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.178"
-            app:layout_constraintStart_toEndOf="@+id/textView21"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
 
         <TextView
@@ -445,15 +444,15 @@
             android:id="@+id/editTextDate2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date"
-            android:hint="             select date"
-            android:textSize="17sp"
-            android:background="@color/cardview_light_background"
+            android:layout_marginStart="140dp"
             android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
+            android:ems="10"
+            android:hint="             select date"
+            android:inputType="date"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.354"
-            app:layout_constraintStart_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText14" />
 
         <TextView
@@ -474,14 +473,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="number"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.285"
-            app:layout_constraintStart_toEndOf="@+id/textView23"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
 
         <TextView
@@ -503,14 +502,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="text"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.178"
-            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
 
         <TextView
@@ -531,15 +530,15 @@
             android:id="@+id/editTextText16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date"
-            android:hint="             select date"
-            android:textSize="17sp"
-            android:background="@color/cardview_light_background"
+            android:layout_marginStart="140dp"
             android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
+            android:ems="10"
+            android:hint="             select date"
+            android:inputType="date"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.381"
-            app:layout_constraintStart_toEndOf="@+id/textView25"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText15" />
 
         <TextView
@@ -560,14 +559,14 @@
             android:id="@+id/editTextNumberDecimal2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="number"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.268"
-            app:layout_constraintStart_toEndOf="@+id/textView26"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText16" />
 
         <TextView
@@ -588,14 +587,14 @@
             android:id="@+id/editTextText17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="text"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.13"
-            app:layout_constraintStart_toEndOf="@+id/textView27"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2" />
 
         <TextView
@@ -630,29 +629,29 @@
             android:id="@+id/editTextDate3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date"
-            android:hint="             select date"
-            android:textSize="17sp"
-            android:background="@color/cardview_light_background"
+            android:layout_marginStart="140dp"
             android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
+            android:ems="10"
+            android:hint="             select date"
+            android:inputType="date"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.325"
-            app:layout_constraintStart_toEndOf="@+id/textView28"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText17" />
 
         <EditText
             android:id="@+id/editTextNumberDecimal3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/cardview_light_background"
             android:ems="10"
             android:inputType="number"
             android:textSize="17sp"
-            android:background="@color/cardview_light_background"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.268"
-            app:layout_constraintStart_toEndOf="@+id/textView29"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextDate3" />
 
         <TextView
@@ -680,13 +679,16 @@
             android:id="@+id/editTextText20"
             android:layout_width="189dp"
             android:layout_height="42dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:ems="10"
+            android:hint="Enter Prog Languge"
+            android:background="@color/black"
+            android:textColor="#EA109A"
             android:inputType="text"
             android:scrollbarSize="10dp"
-            android:textSize="17sp"
-            android:hint="Enter Prog Languge"
             android:textColorHint="#EA109A"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
@@ -696,9 +698,10 @@
             android:id="@+id/ratingBar"
             android:layout_width="233dp"
             android:layout_height="46dp"
+            android:layout_marginStart="40dp"
             android:layout_marginRight="168dp"
-            android:background="#EfE7E7"
 
+            android:background="#EfE7E7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintRight_toRightOf="parent"
@@ -709,18 +712,20 @@
             tools:layout_constraintTop_creator="1" />
 
 
-
         <EditText
             android:id="@+id/editTextText21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="217dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="23dp"
             android:layout_marginTop="24dp"
+            android:background="@color/black"
             android:ems="10"
+            android:hint="Enter Prog Languge"
             android:inputType="text"
             android:scrollbarSize="10dp"
-            android:textSize="17sp"
-            android:hint="Enter Prog Languge"
+            android:textColor="#EA109A"
             android:textColorHint="#EA109A"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.081"
             app:layout_constraintStart_toStartOf="parent"
@@ -731,8 +736,10 @@
             android:id="@+id/ratingBar1"
             android:layout_width="233dp"
             android:layout_height="46dp"
+            android:layout_marginStart="40dp"
             android:layout_marginRight="168dp"
             android:background="#EfE7E7"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintRight_toRightOf="parent"
@@ -744,15 +751,18 @@
 
         <EditText
             android:id="@+id/editTextText22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="206dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="23dp"
             android:layout_marginTop="24dp"
+            android:background="@color/black"
+            android:textColor="#EA109A"
             android:ems="10"
+            android:hint="Enter Prog Languge"
             android:inputType="text"
             android:scrollbarSize="10dp"
-            android:textSize="17sp"
-            android:hint="Enter Prog Languge"
             android:textColorHint="#EA109A"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.072"
             app:layout_constraintStart_toStartOf="parent"
@@ -763,6 +773,7 @@
             android:id="@+id/ratingBar2"
             android:layout_width="233dp"
             android:layout_height="46dp"
+            android:layout_marginStart="60dp"
             android:layout_marginEnd="168dp"
             android:background="#EfE7E7"
             app:layout_constraintEnd_toEndOf="parent"
@@ -794,8 +805,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="4dp"
             android:background="@color/white"
-            android:hint="              Click it"
-            android:text=""
+            android:text="        "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.166"
             app:layout_constraintStart_toEndOf="@+id/radioGroup"

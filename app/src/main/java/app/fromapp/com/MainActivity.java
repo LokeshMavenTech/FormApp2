@@ -50,16 +50,15 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextText22;
     private Button button2;
     private RadioGroup radioGroup;
-    private RadioButton male;
-    private TextView getvalu;
+    private RadioButton radioButton;
+    private TextView getValu;
 
 
     private String firstName;
     private String lastName;
     private String dob;
     private String email;
-    // private String male;
-    // private String female;
+    private String gender1;
     private String buldingName;
     private String streetName;
     private String cityName;
@@ -76,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
     private String university03;
     private String passingDate03;
     private String achive03;
+    private String programingL1;
+    private String programingL2;
+    private String programingL3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
         editTextText5 = findViewById(R.id.editTextText5);//Last Name
         editText = findViewById(R.id.editText);//DOB
         editTextTextEmailAddress = findViewById(R.id.editTextTextEmailAddress);// Email Addess
+
+
         editTextText9 = findViewById(R.id.editTextText9);//Bulding No
         editTextText10 = findViewById(R.id.editTextText10);//Strit Name
         editTextText11 = findViewById(R.id.editTextText11);//City
@@ -115,9 +119,17 @@ public class MainActivity extends AppCompatActivity {
 
         // Radio Group
         radioGroup = findViewById(R.id.radioGroup);
-        getvalu = findViewById(R.id.genderOutPut);
+        getValu = findViewById(R.id.genderOutPut);
+        Button buttonapplay = findViewById(R.id.button);
+        buttonapplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int radioId = radioGroup.getCheckedRadioButtonId();
+                radioButton = findViewById(radioId);
+                getValu.setText("  " + radioButton.getText());
 
-
+            }
+        });
 
         final Calendar calendar = Calendar.getInstance();
         editText.setOnClickListener(new View.OnClickListener() {
@@ -186,16 +198,20 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //personal details
                 String fname = editTextText4.getText().toString();
                 String lname = editTextText5.getText().toString();
                 String dob = editText.getText().toString();
                 String email = editTextTextEmailAddress.getText().toString();
+                String gender1 = getValu.getText().toString();
+                //address details
                 String buldingNo = editTextText9.getText().toString();
                 String strit = editTextText10.getText().toString();
                 String city = editTextText11.getText().toString();
                 String pin = editTextTextPostalAddress.getText().toString();
                 String state = editTextText12.getText().toString();
                 String contactno = editTextPhone.getText().toString();
+                //university details
                 String u1 = editTextText14.getText().toString();
                 String passd1 = editTextDate2.getText().toString();
                 String achive1 = editTextNumberDecimal.getText().toString();
@@ -205,17 +221,16 @@ public class MainActivity extends AppCompatActivity {
                 String u3 = editTextText17.getText().toString();
                 String passd3 = editTextDate3.getText().toString();
                 String achive3 = editTextNumberDecimal3.getText().toString();
+                //programing language details
                 String prog = editTextText20.getText().toString();
                 String prog1 = editTextText21.getText().toString();
                 String prog3 = editTextText22.getText().toString();
+                //after validation go to second page
+                boolean validated = validateinfo(fname, lname, dob, gender1, buldingNo, strit, city, state, pin, contactno, u1, passd1, achive1, u2, passd2, achive2, u3, passd3, achive3, prog, prog1, prog3, email);
+                if (validated) {// if all validation true then go to second activity
+                    sendData();
+                }
 
-                //Radio Button
-                int radio = radioGroup.getCheckedRadioButtonId();
-                male = findViewById(radio);
-
-                validateinfo(fname, lname, dob, buldingNo, strit, city, state, pin, contactno, u1, passd1, achive1, u2, passd2, achive2, u3, passd3, achive3, prog, prog1, prog3);
-                validateinfo1(email);
-                sendData();
 
             }
         });
@@ -225,19 +240,13 @@ public class MainActivity extends AppCompatActivity {
 
     //Radio Button
     public void cheackButton(View v) {
-        int radio = radioGroup.getCheckedRadioButtonId();
-        male = findViewById(radio);
-        Toast.makeText(this, "Selected Gender", Toast.LENGTH_SHORT).show();
-        Button button=findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        int radioId = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(radioId);
+        Toast.makeText(this, "Selected Gender" + radioButton, Toast.LENGTH_SHORT).show();
     }
 
-    private Boolean validateinfo(String fname, String lname, String dob, String buldingNo, String strit, String city, String state, String pin, String contactno, String u1, String passd1, String achive1, String u2, String passd2, String achive2, String u3, String passd3, String achive3, String prog, String prog1, String prog3) {
+
+    private Boolean validateinfo(String fname, String lname, String dob, String gender1, String buldingNo, String strit, String city, String state, String pin, String contactno, String u1, String passd1, String achive1, String u2, String passd2, String achive2, String u3, String passd3, String achive3, String prog, String prog1, String prog3, String email) {
         // First Name
         if (fname.length() == 0) {
             editTextText4.requestFocus();
@@ -259,6 +268,12 @@ public class MainActivity extends AppCompatActivity {
             editTextText5.setError("Please Enter Character");
             return false;
         }
+        // gender validation
+        else if (gender1.length() == 0) {
+            getValu.requestFocus();
+            getValu.setError("Please Enter Gender");
+            return false;
+        }
 
         //Bulding No
 
@@ -266,19 +281,18 @@ public class MainActivity extends AppCompatActivity {
             editTextText9.requestFocus();
             editTextText9.setError("Please Enter Bulding No");
             return false;
+        } else if (!buldingNo.matches("^[a-zA-Z0-9]*$")) {
+            editTextText9.requestFocus();
+            editTextText9.setError("Please Enter Valid Bulding No");
+            return false;
         }
-//        else if (!buldingNo.matches("[a-zA-Z0-9]")) {
-//            editTextText9.requestFocus();
-//            editTextText9.setError("Please Enter Valid Bulding No");
-//            return false;
-//        }
 
         //Street
         else if (strit.length() == 0) {
             editTextText10.requestFocus();
             editTextText10.setError("Please Enter Steeet");
             return false;
-        } else if (!strit.matches("^[a-zA-Z]*$")) {
+        } else if (!strit.matches("^[a-zA-Z0-9]*$")) {
             editTextText10.requestFocus();
             editTextText10.setError("Please Enter Valid Street Name");
             return false;
@@ -308,7 +322,7 @@ public class MainActivity extends AppCompatActivity {
             editTextTextPostalAddress.requestFocus();
             editTextTextPostalAddress.setError("Please Enter Pin Code");
             return false;
-        } else if (!pin.matches("^[1-9]{1}[0-9]{2}\\\\s{0, 1}[0-9]{3}$")) {
+        } else if (!pin.matches("^[0-9]{6}$")) {
             editTextTextPostalAddress.requestFocus();
             editTextTextPostalAddress.setError("Please Enter Valid Pin");
             return false;
@@ -318,7 +332,7 @@ public class MainActivity extends AppCompatActivity {
             editTextPhone.requestFocus();
             editTextPhone.setError("Please Enter Enter Phone Number");
             return false;
-        } else if (!contactno.matches("^[0-9]{10,13}$")) {
+        } else if (!contactno.matches("^(0|91)?[789]\\\\d{9}$|^0[1-9][0-9]{9}$|^0[1-9][0-9]{2}-[0-9]{7}$")) {
             editTextPhone.requestFocus();
             editTextPhone.setError("Please Enter Valid Phone Number");
             return false;
@@ -373,66 +387,77 @@ public class MainActivity extends AppCompatActivity {
             editTextText17.setError("Please Enter Programing Language");
             return false;
         }
-
+        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "Invalid Email", Toast.LENGTH_SHORT).show();
+            return false;
+        }
         return true;
 
     }
 
-    private Boolean validateinfo1(String email) {
-        // Email id
-        if (!email.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this, "Email Validation SuccessFully", Toast.LENGTH_SHORT).show();
-            return true;
-        } else {
-            Toast.makeText(this, "Invalid Email", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
 
     public void sendData() {
+        // personal details;
         firstName = editTextText4.getText().toString().trim();
         lastName = editTextText5.getText().toString().trim();
         dob = editText.getText().toString().trim();
         email = editTextTextEmailAddress.getText().toString().trim();
-        //  male = checkBox.getText().toString().trim();
-//       female = checkBox2.getText().toString().trim();
+
+        gender1 = getValu.getText().toString().trim();
+        // adress details
         buldingName = editTextText9.getText().toString().trim();
         streetName = editTextText10.getText().toString().trim();
         cityName = editTextText11.getText().toString().trim();
         stateName = editTextText12.getText().toString().trim();
         pinNumber = editTextTextPostalAddress.getText().toString().trim();
         contactNumber = editTextPhone.getText().toString().trim();
+        //university 1 details
         university01 = editTextText14.getText().toString().trim();
         passingDate01 = editTextDate2.getText().toString().trim();
         achive01 = editTextNumberDecimal.getText().toString().trim();
+        //university 2 details
         university02 = editTextText15.getText().toString().trim();
         passingDate02 = editTextText16.getText().toString().trim();
         achive02 = editTextNumberDecimal2.getText().toString().trim();
+        //university 3 details
         university03 = editTextText17.getText().toString().trim();
         passingDate03 = editTextDate3.getText().toString().trim();
         achive03 = editTextNumberDecimal3.getText().toString().trim();
+        //programing language
+        programingL1 = editTextText20.getText().toString().trim();
+        programingL2 = editTextText21.getText().toString().trim();
+        programingL3 = editTextText22.getText().toString().trim();
         Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        // personal details
         intent.putExtra(MainActivity2.FNAME, firstName);
         intent.putExtra(MainActivity2.LNAME, lastName);
         intent.putExtra(MainActivity2.DOB, dob);
         intent.putExtra(MainActivity2.EMAIL, email);
-//        intent.putExtra(MainActivity2.MALE, male);
-//        intent.putExtra(MainActivity2.FEMALE,female);
+        intent.putExtra(MainActivity2.GENDER, gender1);
+
+        // adress details
         intent.putExtra(MainActivity2.BNAME, buldingName);
         intent.putExtra(MainActivity2.STREETNAME, streetName);
         intent.putExtra(MainActivity2.CITYNAME, streetName);
         intent.putExtra(MainActivity2.STATE, stateName);
         intent.putExtra(MainActivity2.PIN, pinNumber);
         intent.putExtra(MainActivity2.CONTACTN, contactNumber);
+        // university 1 details
         intent.putExtra(MainActivity2.UNIVERAITY1, university01);
         intent.putExtra(MainActivity2.PASSINGDATE1, passingDate01);
         intent.putExtra(MainActivity2.ACHIVE1, achive01);
+        //university 2 details
         intent.putExtra(MainActivity2.UNIVERAITY2, university02);
         intent.putExtra(MainActivity2.PASSINGDATE2, passingDate02);
         intent.putExtra(MainActivity2.ACHIVE2, achive02);
+        //university 3 details
         intent.putExtra(MainActivity2.UNIVERAITY3, university03);
         intent.putExtra(MainActivity2.PASSINGDATE3, passingDate03);
         intent.putExtra(MainActivity2.ACHIVE3, achive03);
+        //programing language
+        intent.putExtra(MainActivity2.PROGL1, programingL1);
+        intent.putExtra(MainActivity2.PROGL2, programingL2);
+        intent.putExtra(MainActivity2.PROGL3, programingL3);
         startActivity(intent);
 
     }
