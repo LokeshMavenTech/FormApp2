@@ -798,7 +798,7 @@
             app:layout_constraintTop_toBottomOf="@+id/ratingBar2"
             app:layout_constraintVertical_bias="0.6" />
 
-        <TextView
+        <EditText
             android:id="@+id/genderOutPut"
             android:layout_width="144dp"
             android:layout_height="32dp"

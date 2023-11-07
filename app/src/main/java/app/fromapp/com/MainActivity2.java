@@ -33,7 +33,6 @@ public class MainActivity2 extends AppCompatActivity {
     private TextView programingViewl1;
     private TextView programingViewl2;
     private TextView programingViewl3;
-
     private String firstName1;
     private String lastName1;
     private String dob1;
@@ -57,8 +56,10 @@ public class MainActivity2 extends AppCompatActivity {
     private String programing01;
     private String programing02;
     private String programing03;
-
-
+    // rating bar
+    private float rating;
+    private float rating1;
+    private float rating2;
     public static final String FNAME = "FNAME";
     public static final String LNAME = "LNAME";
     public static final String DOB = "DOB";
@@ -82,7 +83,6 @@ public class MainActivity2 extends AppCompatActivity {
     public static final String PROGL1 = "PROGL1";
     public static final String PROGL2 = "PROGL2";
     public static final String PROGL3 = "PROGL3";
-
 
 
     @Override
@@ -113,6 +113,19 @@ public class MainActivity2 extends AppCompatActivity {
         programingViewl1 = findViewById(R.id.programingl1);
         programingViewl2 = findViewById(R.id.programingl2);
         programingViewl3 = findViewById(R.id.programingl3);
+
+        // Retrieve the rating value from the Intent
+        rating = getIntent().getFloatExtra("rating", 0.0f);
+        rating1 = getIntent().getFloatExtra("rating1", 0.0f);
+        rating2 = getIntent().getFloatExtra("rating2", 0.0f);
+
+        //rating value as needed in your target activity(display it in a TextView)
+        TextView ratingTextView = findViewById(R.id.ratingBarView);
+        TextView ratingTextView1 = findViewById(R.id.ratingBarView1);
+        TextView ratingTextView2 = findViewById(R.id.ratingBarView2);
+        ratingTextView.setText("Rating: " + rating);
+        ratingTextView1.setText("Rating: " + rating1);
+        ratingTextView2.setText("Rating: " + rating2);
 
 
         Intent intent = getIntent();

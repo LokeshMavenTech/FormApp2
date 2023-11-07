@@ -694,7 +694,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
         <TextView
-            android:id="@+id/ratingBar"
+            android:id="@+id/ratingBarView"
             android:layout_width="233dp"
             android:layout_height="46dp"
             android:layout_marginStart="40dp"
@@ -727,11 +727,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.081"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+            app:layout_constraintTop_toBottomOf="@+id/ratingBarView" />
 
 
         <TextView
-            android:id="@+id/ratingBar1"
+            android:id="@+id/ratingBarView1"
             android:layout_width="233dp"
             android:layout_height="46dp"
             android:layout_marginStart="40dp"
@@ -761,11 +761,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.072"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ratingBar1" />
+            app:layout_constraintTop_toBottomOf="@+id/ratingBarView1" />
 
 
         <TextView
-            android:id="@+id/ratingBar2"
+            android:id="@+id/ratingBarView2"
             android:layout_width="233dp"
             android:layout_height="46dp"
             android:layout_marginStart="60dp"
