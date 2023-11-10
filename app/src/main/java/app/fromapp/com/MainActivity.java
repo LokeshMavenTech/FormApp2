@@ -272,11 +272,11 @@ public class MainActivity extends AppCompatActivity {
             editText.setError("Please Enter Date Of Birth");
             return false;
         }
-//        else if (!dob.matches("^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\\\s[1-9]|[12][0-9]|3[01],\\\\s(19|20)\\\\d{2}$")) {
-//            editText.requestFocus();
-//            editText.setError("Please Valid Date Of Birth");
-//            return false;
-//        }
+        else if (!dob.matches("^(19[0-9]{2}|200[0-2])-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$")) {
+            editText.requestFocus();
+            editText.setError("Please Valid Date Of Birth");
+            return false;
+        }
         // gender validation
         else if (gender1.length() == 0) {
             genderOutPut.requestFocus();
