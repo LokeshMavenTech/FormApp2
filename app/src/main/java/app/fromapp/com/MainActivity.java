@@ -23,6 +23,8 @@ import java.util.Locale;
 
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextText15;
     private EditText editTextNumberDecimal3;
     private EditText editTextDate3;
+    private TextInputEditText date_of_birth;
     private EditText editTextText17;
     private EditText editTextNumberDecimal2;
     private EditText editTextText16;
@@ -105,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         editTextText16 = findViewById(R.id.editTextText16);
         editTextNumberDecimal2 = findViewById(R.id.editTextNumberDecimal2);
         // for university 3
+        date_of_birth=findViewById(R.id.date_of_birth);
         editTextText17 = findViewById(R.id.editTextText17);
         editTextDate3 = findViewById(R.id.editTextDate3);
         editTextNumberDecimal3 = findViewById(R.id.editTextNumberDecimal3);
@@ -182,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         editTextDate3.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 year = calendar.get(Calendar.YEAR);
@@ -193,6 +196,22 @@ public class MainActivity extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         String formattedDate = String.format(Locale.getDefault(), "%04d-%02d-%02d", year, month + 1, dayOfMonth);
                         editTextDate3.setText(formattedDate);
+                    }
+                }, year, month, day);
+                datePickerDialog.show();
+            }
+        });
+        date_of_birth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                year = calendar.get(Calendar.YEAR);
+                month = calendar.get(Calendar.MONTH);
+                day = calendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        String formattedDate = String.format(Locale.getDefault(), "%04d-%02d-%02d", year, month + 1, dayOfMonth);
+                        date_of_birth.setText(formattedDate);
                     }
                 }, year, month, day);
                 datePickerDialog.show();

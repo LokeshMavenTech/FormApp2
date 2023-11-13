@@ -10,8 +10,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,16 +19,24 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fullname"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Full Name"
+                app:counterEnabled="true"
+                app:counterMaxLength="18"
+                app:helperText="Requred*"
+                app:helperTextTextColor="#EA109A"
                 app:startIconDrawable="@drawable/ic_name"
-                android:hint="Full Name">
+
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:maxLength="20" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -39,11 +47,14 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:startIconDrawable="@drawable/ic_email"
-                android:hint="Email Address ">
+                android:hint="Email Address "
+                app:helperText="Requred*"
+                app:helperTextTextColor="#EA109A"
+                app:startIconDrawable="@drawable/ic_email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -52,6 +63,55 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="DOB"
+                app:helperText="Requred*"
+                app:helperTextTextColor="#EA109A"
+                app:startIconDrawable="@drawable/round_alarm_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date_of_birth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:checkedButton="@+id/radio_button_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/radio_button_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Male"/>
+                <RadioButton
+                    android:id="@+id/radio_button_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Female"
+               />
+            </RadioGroup>
+
+        </LinearLayout>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
