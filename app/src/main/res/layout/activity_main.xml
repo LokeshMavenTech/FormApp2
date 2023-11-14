@@ -18,6 +18,44 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/resume_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:gravity="center|center_horizontal"
+                android:text="Enter Your Resume Details:-"
+                android:textColor="#9E67F6"
+                android:textColorHighlight="#301D1D"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/personal_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="2dp"
+                android:text="Personal Details:-"
+                android:textColor="#9E67F6"
+                android:textColorHighlight="#301D1D"
+                android:textSize="15dp"
+                android:textStyle="bold|italic" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/fullname"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -26,11 +64,10 @@
                 android:hint="Full Name"
                 app:counterEnabled="true"
                 app:counterMaxLength="18"
+                app:endIconMode="clear_text"
                 app:helperText="Requred*"
-                app:helperTextTextColor="#EA109A"
-                app:startIconDrawable="@drawable/ic_name"
-
-                >
+                app:helperTextTextColor="#FFEF0000"
+                app:startIconDrawable="@drawable/ic_name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -52,8 +89,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email Address "
+                app:endIconMode="clear_text"
                 app:helperText="Requred*"
-                app:helperTextTextColor="#EA109A"
+                app:helperTextTextColor="#FFEF0000"
                 app:startIconDrawable="@drawable/ic_email">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -75,8 +113,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="DOB"
+                app:endIconMode="clear_text"
                 app:helperText="Requred*"
-                app:helperTextTextColor="#EA109A"
+                app:helperTextTextColor="#FFEF0000"
                 app:startIconDrawable="@drawable/round_alarm_24">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -90,26 +129,579 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <RadioGroup
-                android:id="@+id/radioGroup1"
-                android:checkedButton="@+id/radio_button_1"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:id="@+id/radio_button_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Male"/>
-                <RadioButton
-                    android:id="@+id/radio_button_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Female"
-               />
-            </RadioGroup>
+                android:layout_height="match_parent"
+                android:hint="Gender"
+                app:helperText="Requred*"
+                app:helperTextTextColor="#FFEF0000"
+                app:startIconDrawable="@drawable/ic_male">
 
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/address_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="2dp"
+                android:text="Address Details:-"
+                android:textColor="#9E67F6"
+                android:textColorHighlight="#301D1D"
+                android:textSize="15dp"
+                android:textStyle="bold|italic" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/bulding_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bulding Name"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:endIconMode="clear_text"
+                app:helperText="Requred*"
+                app:helperTextTextColor="#FFEF0000"
+                app:startIconDrawable="@drawable/ic_bulding">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="32" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/street_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Street Name"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:endIconMode="clear_text"
+                app:helperText="Requred*"
+                app:helperTextTextColor="#FFEF0000"
+                app:startIconDrawable="@drawable/ic_street">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="32" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/city_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City Name"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:endIconMode="clear_text"
+                app:helperText="Requred*"
+                app:helperTextTextColor="#FFEF0000"
+                app:startIconDrawable="@drawable/ic_city">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="32" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="State Name"
+                app:helperText="Requred*"
+                app:helperTextTextColor="#FFEF0000"
+                app:startIconDrawable="@drawable/ic_state">
+
+                <AutoCompleteTextView
+                    android:id="@+id/state_auto_complete_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pin_number"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pin Number"
+                app:counterEnabled="true"
+                app:counterMaxLength="6"
+                app:endIconMode="clear_text"
+                app:helperText="Requred*"
+                app:helperTextTextColor="#FFEF0000"
+                app:startIconDrawable="@drawable/ic_pin">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="6" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/contact_number"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact Number"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:endIconMode="clear_text"
+                app:helperText="Requred*"
+                app:helperTextTextColor="#FFEF0000"
+                app:prefixText="+91"
+                app:startIconDrawable="@drawable/ic_contact">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="10" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/education_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="2dp"
+                android:text="Education Details:-"
+                android:textColor="#9E67F6"
+                android:textColorHighlight="#301D1D"
+                android:textSize="15dp"
+                android:textStyle="bold|italic" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/institute1_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="2dp"
+                android:text="[Institute-1]:"
+                android:textColor="#9E67F6"
+                android:textColorHighlight="#301D1D"
+                android:textSize="15dp"
+                android:textStyle="bold|italic" />
+
+
+        </LinearLayout>
+        <!-- University 1 -->
+        <LinearLayout
+            style="@style/Widget.Design.ScrimInsetsFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:hint="Qualification"
+                    app:helperText="Requred*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_state">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/qualification_auto_complete_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- gggggggg-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/university001"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Institute Name"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    app:endIconMode="clear_text"
+                    app:helperText="*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_university">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="30" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mark01"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Mark%"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="3"
+                    app:endIconMode="clear_text"
+                    app:helperText="*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_mark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--vvvvvvv-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Pass Date"
+                    app:endIconMode="clear_text"
+                    app:helperText="*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_calander">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passing_date01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/institute2_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="2dp"
+                android:text="[Institute-2]:"
+                android:textColor="#9E67F6"
+                android:textColorHighlight="#301D1D"
+                android:textSize="15dp"
+                android:textStyle="bold|italic" />
+
+
+        </LinearLayout>
+        <!-- University 2 -->
+        <LinearLayout
+            style="@style/Widget.Design.ScrimInsetsFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:hint="Qualification"
+                    app:helperText="Requred*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_state">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/qualification2_auto_complete_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- gggggggg-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/university002"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Institute Name"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    app:endIconMode="clear_text"
+                    app:helperText="*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_university">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="30" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mark02"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Mark%"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="3"
+                    app:endIconMode="clear_text"
+                    app:helperText="*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_mark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--vvvvvvv-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Pass Date"
+                    app:endIconMode="clear_text"
+                    app:helperText="*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_calander">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passing_date002"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/institute3_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="2dp"
+                android:text="[Institute-3]:"
+                android:textColor="#9E67F6"
+                android:textColorHighlight="#301D1D"
+                android:textSize="15dp"
+                android:textStyle="bold|italic" />
+
+
+        </LinearLayout>
+
+        <!-- University 3 -->
+        <LinearLayout
+            style="@style/Widget.Design.ScrimInsetsFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:hint="Qualification"
+                    app:helperText="Requred*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_state">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/qualification3_auto_complete_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- gggggggg-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/university003"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Institute Name"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="30"
+                    app:endIconMode="clear_text"
+                    app:helperText="*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_university">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLength="30" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mark03"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Mark%"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="3"
+                    app:endIconMode="clear_text"
+                    app:helperText="*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_mark">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <!--vvvvvvv-->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Pass Date"
+                    app:endIconMode="clear_text"
+                    app:helperText="*"
+                    app:helperTextTextColor="#FFEF0000"
+                    app:startIconDrawable="@drawable/ic_calander">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passing_date02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
         </LinearLayout>
 
 

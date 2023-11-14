@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.util.Log;
 import android.util.Patterns;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -85,6 +88,20 @@ public class MainActivity extends AppCompatActivity {
     private String programingL2;
     private String programingL3;
 
+
+    //Matrial Ui Gender
+    String[] item={"Male","Female"};
+    AutoCompleteTextView autoCompleteTextView ;
+    ArrayAdapter<String>adapterItem;
+    //Matrial Ui State
+    String[]stateItam={
+            "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"};
+    AutoCompleteTextView stateAutoCompleteTextView;
+    ArrayAdapter<String>stateAdapterItem;
+    //Matrial Ui institute1
+    String[] Qualification={"PG","UG","SCHOOL"};
+      AutoCompleteTextView qualificationAutoCompleteTextView;
+    ArrayAdapter<String>qualificationAdapterItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,6 +142,42 @@ public class MainActivity extends AppCompatActivity {
         radioGroup = findViewById(R.id.radioGroup);
         genderOutPut = findViewById(R.id.genderOutPut);
         Button buttonapplay = findViewById(R.id.button);
+
+        // matrial ui gender
+        autoCompleteTextView= findViewById(R.id.auto_complete_text);
+        adapterItem =new ArrayAdapter<String>(this,R.layout.list_item,item);
+        autoCompleteTextView.setAdapter(adapterItem);
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item=parent.getItemAtPosition(position).toString();
+                Toast.makeText(MainActivity.this, "Gender "+ item, Toast.LENGTH_SHORT).show();
+            }
+        });
+        // matrial ui State
+        stateAutoCompleteTextView=findViewById(R.id.state_auto_complete_text);
+        stateAdapterItem=new ArrayAdapter<String>(this,R.layout.list_item,stateItam);
+        stateAutoCompleteTextView.setAdapter(stateAdapterItem);
+        stateAutoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String stateItam=parent.getItemAtPosition(position).toString();
+                Toast.makeText(MainActivity.this, "State "+stateItam, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // matrial ui institude
+
+        qualificationAutoCompleteTextView=findViewById(R.id.qualification_auto_complete_text);
+      qualificationAdapterItem=new ArrayAdapter<String>(this,R.layout.list_item,Qualification);
+      qualificationAutoCompleteTextView.setAdapter(qualificationAdapterItem);
+      qualificationAutoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+          @Override
+          public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+              String Qualification=parent.getItemAtPosition(position).toString();
+              Toast.makeText(MainActivity.this, "Institude"+Qualification, Toast.LENGTH_SHORT).show();
+          }
+      });
         buttonapplay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
