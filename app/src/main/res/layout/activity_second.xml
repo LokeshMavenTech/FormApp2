@@ -84,7 +84,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/email"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,6 +95,7 @@
                 app:startIconDrawable="@drawable/ic_email">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress" />
@@ -119,7 +120,7 @@
                 app:startIconDrawable="@drawable/round_alarm_24">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/date_of_birth"
+                    android:id="@+id/date_of_birthui"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="date"
@@ -178,7 +179,6 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/bulding_name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -191,6 +191,7 @@
                 app:startIconDrawable="@drawable/ic_bulding">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bulding_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -205,7 +206,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/street_name"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -218,6 +219,7 @@
                 app:startIconDrawable="@drawable/ic_street">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/street_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -232,7 +234,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/city_name"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -245,6 +247,7 @@
                 app:startIconDrawable="@drawable/ic_city">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/city_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -282,7 +285,6 @@
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/pin_number"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -295,6 +297,7 @@
                 app:startIconDrawable="@drawable/ic_pin">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pin_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"

@@ -35,16 +35,16 @@ import java.util.Calendar;
 public class SecondActivity extends AppCompatActivity {
     private TextInputEditText editTextText4;
     private EditText editTextText5;
-    private EditText editText;
+    private TextInputEditText date_of_birthui;
     int year;
     int month;
     int day;
-    private EditText editTextTextEmailAddress;
-    private EditText editTextText9;
-    private EditText editTextText10;
-    private EditText editTextText11;
-    private EditText editTextText12;
-    private EditText editTextTextPostalAddress;
+    private TextInputEditText emailid;
+    private TextInputEditText bulding_name;
+    private TextInputEditText street_name;
+    private TextInputEditText city_name;
+    private AutoCompleteTextView state_auto_complete_text;
+    private TextInputEditText pin_number;
     private EditText editTextPhone;
     private EditText editTextText14;
     private EditText editTextDate2;
@@ -140,13 +140,13 @@ public class SecondActivity extends AppCompatActivity {
         });
         editTextText4 = findViewById(R.id.editTextText4);// First Name
         editTextText5 = findViewById(R.id.editTextText5);//Last Name
-        editText = findViewById(R.id.editText);//DOB
-        editTextTextEmailAddress = findViewById(R.id.editTextTextEmailAddress);// Email Addess
-        editTextText9 = findViewById(R.id.editTextText9);//Bulding No
-        editTextText10 = findViewById(R.id.editTextText10);//Strit Name
-        editTextText11 = findViewById(R.id.editTextText11);//City
-        editTextText12 = findViewById(R.id.editTextText12);//State
-        editTextTextPostalAddress = findViewById(R.id.editTextTextPostalAddress);//pin
+        date_of_birthui = findViewById(R.id.date_of_birthui);//DOB
+        emailid = findViewById(R.id.emailid);// Email Addess
+        bulding_name = findViewById(R.id.bulding_name);//Bulding No
+        street_name = findViewById(R.id.street_name);//Strit Name
+        city_name = findViewById(R.id.city_name);//City
+        state_auto_complete_text = findViewById(R.id.state_auto_complete_text);//State
+        pin_number = findViewById(R.id.pin_number);//pin
         editTextPhone = findViewById(R.id.editTextPhone);// contact Number
         // for university 1
         editTextText14 = findViewById(R.id.editTextText14);
@@ -158,7 +158,7 @@ public class SecondActivity extends AppCompatActivity {
         editTextNumberDecimal2 = findViewById(R.id.editTextNumberDecimal2);
         // for university 3
         //matrial ui date
-        date_of_birth=findViewById(R.id.date_of_birth);
+        date_of_birth=findViewById(R.id.date_of_birthui);
         passing_date001=findViewById(R.id.passing_date001);
         passing_date002=findViewById(R.id.passing_date002);
         passing_date003=findViewById(R.id.passing_date003);
@@ -248,7 +248,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
         final Calendar calendar = Calendar.getInstance();
-        editText.setOnClickListener(new View.OnClickListener() {
+        date_of_birthui.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 year = calendar.get(Calendar.YEAR);
@@ -258,7 +258,7 @@ public class SecondActivity extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         String formattedDate = String.format(Locale.getDefault(), "%04d-%02d-%02d", year, month + 1, dayOfMonth);
-                        editText.setText(formattedDate);
+                        date_of_birthui.setText(formattedDate);
                     }
                 }, year, month, day);
                 datePickerDialog.show();
@@ -390,15 +390,15 @@ public class SecondActivity extends AppCompatActivity {
                 //personal details
                 String fname = editTextText4.getText().toString();
                 String lname = editTextText5.getText().toString();
-                String dob = editText.getText().toString();
-                String email = editTextTextEmailAddress.getText().toString();
+                String dob = date_of_birthui.getText().toString();
+                String email = emailid.getText().toString();
                 String gender1 = genderOutPut.getText().toString();
                 //address details
-                String buldingNo = editTextText9.getText().toString();
-                String strit = editTextText10.getText().toString();
-                String city = editTextText11.getText().toString();
-                String pin = editTextTextPostalAddress.getText().toString();
-                String state = editTextText12.getText().toString();
+                String buldingNo = bulding_name.getText().toString();
+                String strit = street_name.getText().toString();
+                String city = city_name.getText().toString();
+                String pin = pin_number.getText().toString();
+                String state = state_auto_complete_text.getText().toString();
                 String contactno = editTextPhone.getText().toString();
                 //university details
                 String u1 = editTextText14.getText().toString();
@@ -454,13 +454,13 @@ public class SecondActivity extends AppCompatActivity {
         }
         //date of birth
         else if (dob.length() == 0) {
-            editText.requestFocus();
-            editText.setError("Please Enter Date Of Birth");
+            date_of_birthui.requestFocus();
+            date_of_birthui.setError("Please Enter Date Of Birth");
             return false;
         }
         else if (!dob.matches("^(19[0-9]{2}|200[0-2])-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$")) {
-            editText.requestFocus();
-            editText.setError("Please Valid Date Of Birth");
+            date_of_birthui.requestFocus();
+            date_of_birthui.setError("Please Valid Date Of Birth");
             return false;
         }
         // gender validation
@@ -471,54 +471,54 @@ public class SecondActivity extends AppCompatActivity {
         }
         //Bulding No
         else if (buldingNo.length() == 0) {
-            editTextText9.requestFocus();
-            editTextText9.setError("Please Enter Bulding No");
+            bulding_name.requestFocus();
+            bulding_name.setError("Please Enter Bulding No");
             return false;
         }
 //        else if (!buldingNo.matches("^[A-Za-z0-9\\\\s/#]+$")) {
-//            editTextText9.requestFocus();
-//            editTextText9.setError("Please Enter Valid Bulding No");
+//            bulding_name.requestFocus();
+//            bulding_name.setError("Please Enter Valid Bulding No");
 //            return false;
 //        }
         //Street
         else if (strit.length() == 0) {
-            editTextText10.requestFocus();
-            editTextText10.setError("Please Enter Steeet");
+            street_name.requestFocus();
+            street_name.setError("Please Enter Steeet");
             return false;
         }
 //        else if (!strit.matches("^[A-Za-z0-9\\\\.\\\\s\\\\-\\\\']+")) {
-//            editTextText10.requestFocus();
-//            editTextText10.setError("Please Enter Valid Street Name");
+//            street_name.requestFocus();
+//            street_name.setError("Please Enter Valid Street Name");
 //            return false;
 //        }
         //city
         else if (city.length() == 0) {
-            editTextText11.requestFocus();
-            editTextText11.setError("Please Enter City");
+            city_name.requestFocus();
+            city_name.setError("Please Enter City");
             return false;
         } else if (!city.matches("^[A-Za-z\\\\s-]+$")) {
-            editTextText11.requestFocus();
-            editTextText11.setError("Please Enter Valid City");
+            city_name.requestFocus();
+            city_name.setError("Please Enter Valid City");
             return false;
         }
         //State
         else if (state.length() == 0) {
-            editTextText12.requestFocus();
-            editTextText12.setError("Please Enter State");
+            state_auto_complete_text.requestFocus();
+            state_auto_complete_text.setError("Please Enter State");
             return false;
         } else if (!state.matches("^[A-Za-z\\\\s-]+$")) {
-            editTextText12.requestFocus();
-            editTextText12.setError("Please Enter Valid State");
+            state_auto_complete_text.requestFocus();
+            state_auto_complete_text.setError("Please Enter Valid State");
             return false;
         }
         //pin
         else if (pin.length() == 0) {
-            editTextTextPostalAddress.requestFocus();
-            editTextTextPostalAddress.setError("Please Enter Pin Code");
+            pin_number.requestFocus();
+            pin_number.setError("Please Enter Pin Code");
             return false;
         } else if (!pin.matches("^[0-9]{6}$")) {
-            editTextTextPostalAddress.requestFocus();
-            editTextTextPostalAddress.setError("Please Enter Valid Pin");
+            pin_number.requestFocus();
+            pin_number.setError("Please Enter Valid Pin");
             return false;
         }
         // Contact no
@@ -614,16 +614,17 @@ public class SecondActivity extends AppCompatActivity {
         // personal details;
         firstName = editTextText4.getText().toString().trim();
         lastName = editTextText5.getText().toString().trim();
-        dob = editText.getText().toString().trim();
-        email = editTextTextEmailAddress.getText().toString().trim();
+        dob = date_of_birthui.getText().toString().trim();
+        email = emailid.getText().toString().trim();
         // gender
         genderM = genderOutPut.getText().toString().trim();
+        //editTextTextPostalAddress
         // adress details
-        buldingName = editTextText9.getText().toString().trim();
-        streetName = editTextText10.getText().toString().trim();
-        cityName = editTextText11.getText().toString().trim();
-        stateName = editTextText12.getText().toString().trim();
-        pinNumber = editTextTextPostalAddress.getText().toString().trim();
+        buldingName = bulding_name.getText().toString().trim();
+        streetName = street_name.getText().toString().trim();
+        cityName = city_name.getText().toString().trim();
+        stateName = state_auto_complete_text.getText().toString().trim();
+        pinNumber = pin_number.getText().toString().trim();
         contactNumber = editTextPhone.getText().toString().trim();
         //university 1 details
         university01 = editTextText14.getText().toString().trim();
